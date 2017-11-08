@@ -1,0 +1,60 @@
+/* ---------------------------------------------------------
+                            Main
+   ---------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+// @extend %flex;           // flex-wrap:wrap; justify-content:space-between; align-items:center; display:flex;
+// @extend %clearfix;       // &:after { content:''; display:block; clear:both; }
+// @extend %transition;     // (all 0.5s ease)
+// @extend %listreset;      // (margin:0; padding:0; list-style: none;)
+// @extend %ellipsis;       // Match text...
+
+
+// @include animate(color)          // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+// @include size(16px)              // (15px, 4px);
+// @include v-align(100%);          // vertical align el inside parent with fixed height/min-height
+// @include placeholder;            // input { @include placeholder {color: red;} }
+// @include hide-text;              // overflow:hidden; text-indent:101%; white-space:nowrap;
+// @include center_transform();     // left:50%; top:50%; transform:translate(-50%, -50%); position:absolute;
+// @include verrical_center_transform();    // left:0; top:50%; width: 100%; transform:translate(0, -50%); position:absolute;
+// @include font(14px, 18px, #000);         // font-size, line-height, color
+// @include triangle(20px, red, up);
+// @include animate(color width, 1s, linear);
+// @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+
+// font: italic 15px/1.75em 'Times New Roman';
+
+
+
+//@include media("<480px") {}
+
+//@include media(">=480px") {}
+
+//@include media("<tablet") {}
+
+//@include media(">=tablet") {}
+
+//@include media("<992px") {}
+
+//@include media(">=992px") {}
+
+//@include media("<1200px") {}
+
+//@include media(">=1200px") {}
+
+//@include media("<1200px", ">991px") {}
+
+
+
+
+
+
+

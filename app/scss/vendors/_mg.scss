@@ -1,0 +1,205 @@
+//.no-touch a:hover, a:active {
+//    color:#3c3c3c;
+//    background:#92e8ff;
+//}
+
+[id^="example9-"] {
+    position:absolute;
+    margin:10px;
+    width: 140px;
+    height: 100px;
+    border: 2px solid #b3b3b3;
+    display:flex;
+    color:#3c3c3c;
+    background: #fcfcfc;
+    font-family: sans-serif;
+    font-size:20px;
+    text-decoration: none;
+    border-radius: 15px;
+
+    @include media("<1200px") {
+        width: 110px;
+        height: 90px;
+    }
+    @include media("<desktop") {
+        width: 100px;
+        height: 85px;
+    }
+    @include media("<tablet") {
+        width: 80px;
+        height: 65px;
+    }
+    @include media("<480px") {
+        width: 50px;
+        height: 55px;
+    }
+ }
+
+#example9-click-prev,
+#example9-click-next {
+    text-decoration: none;
+    display:block;
+    position:relative;
+    width:36px;
+    height:16px;
+    font-size:0;
+    padding:5px 0px 5px 10px;
+    margin:5px;
+}
+
+//.no-touch [id^="example9-"]:hover,
+//[id^="example9-"].active {
+//    opacity: .5;
+//}
+
+/* scrolls */
+#example9-click-scrollOut {
+    color:#3c3c3c;
+    background: #fcfcfc;
+    top:0;
+    display:block;
+    position:relative;
+    width:50%;
+    height:19px;
+    background:#e2e2e2;
+    margin:0px 10px;
+    padding:0px;
+    border:0px solid #3c3c3c;
+}
+
+#example9-click-scrollIn {
+    color:#3c3c3c;
+    border:2px solid #b3b3b3;
+    background: #fcfcfc;
+    display:block;
+    position:absolute;
+    width:50px;
+    height:19px;
+    background:#fcfcfc;
+    margin:0px;
+    padding:0px;
+}
+//.no-touch #example9-click-scrollIn:hover,
+//#example9-click-scrollIn.active {
+//    background: $dark;
+//}
+
+/* drags */
+#example9-click-dragOut {
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+    float:left;
+    left:0px;
+    //width:520px;
+    //height:210px;
+    width: 100%;
+    height: 330px;
+    border:2px solid #e2e2e2;
+    opacity:0;
+    filter:alpha(opacity=0);
+    border-radius:0px;
+}
+#example9-click-dragIn {
+    position:absolute;
+    margin:0px;
+    padding:0px;
+    display:block;
+    width:1200px;
+    //height:190px;
+    height: 330px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    border-radius:0px;
+}
+
+.mg-slider {
+    margin-top: 50px;
+}
+.mg-wrap {
+    margin: 0 auto;
+    height: 500px;
+    width: 100%;
+
+    @include media("<1200px") {
+        width: 745px;
+        height: 420px;
+    }
+    @include media("<tablet") {
+        width: 450px;
+        height: 300px;
+    }
+    @include media("<480px") {
+        width: 290px;
+        height: 250px;
+    }
+}
+.mg {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //background: $dark-black;
+    background: transparent;
+
+    &__item {
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            //background: $dark-black;
+            background: transparent;
+            opacity: 0;
+            transition: all .5s ease;
+        }
+        &:hover:before {
+            opacity: 1;
+        }
+    }
+
+    &__show {
+        position: relative;
+        margin: auto;
+        content: '\f002';
+        width: 23px;
+        height: 23px;
+        color: rgba(178, 178, 178, 0.7);
+        font-family: FontAwesome;
+        font-size: 24px;
+        display: block;
+        text-decoration: none;
+        transform: scale(3);
+        opacity: 0;
+        transition: all .5s ease;
+
+    }
+    .fa-search:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 20px;
+    }
+    .mg__item:hover .mg__show {
+        transform: scale(1);
+        opacity: 1;
+    }
+    &__nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 auto;
+        width: 100%; //372
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -5,23 +5,20 @@
 /// * Helper class to truncate and add ellipsis to a string too long for it to fit
 /// * on a single line.
 /// * 1. Prevent content from wrapping, forcing it on a single line.
-/// * 2. Add ellipsis at the end of the line.
+/// * 2. Add ellipsis at the end of the line.   example: "world..."
 
-// elipsis
 %ellipsis {
   white-space: nowrap; /* 1 */
   text-overflow: ellipsis; /* 2 */
   overflow: hidden;
 }
 
-// list reset
 %listreset {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-// clearfix
 %clearfix {
   &:after {
     content: '';
@@ -30,17 +27,14 @@
   }
 }
 
-// clearfix class
 .clearfix {
   @extend %clearfix;
 }
 
-// transition
 %transition {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-// justify nav
 %justify {
   text-align: justify;
   font-size: 1px;
@@ -60,47 +54,51 @@
   }
 }
 
-// flex
-%flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items:  center;
-}
-
 #wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
 
-  @include media('≥tablet') {
-    font-size: 18px;
+  @include media('<desktop') {
+    font-size: 11px;
   }
 }
 
-.wrap {
-  max-width: 1174px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+//.wrap {
+//  max-width: 1174px;
+//  margin-left: auto;
+//  margin-right: auto;
+//  padding-left: 15px;
+//  padding-right: 15px;
+//}
+//
+//.wrap-flex {
+//  @extend .wrap;
+//
+//  @include media('≥tablet') {
+//    display: flex;
+//    justify-content: space-between;
+//    flex-wrap: wrap;
+//    align-items: center;
+//  }
+//}
 
-.wrap-flex {
-  @extend .wrap;
 
-  @include media('≥tablet') {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+.hidden-sm {
+  @include media('<tablet') {
+    display: none;
   }
 }
 
-.text-center {
-  text-align: center;
+.visible-sm {
+  @include media('≥tablet') {
+    display: none !important;
+  }
 }
-
-.hidden {
-  display: none;
+.visible-lg {
+  @include media('<desktop') {
+    display: none !important;
+  }
 }
 
 .img {
@@ -109,4 +107,3 @@
   height: auto;
   vertical-align: top;
 }
-

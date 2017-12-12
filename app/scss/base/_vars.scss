@@ -4,16 +4,19 @@
 
 // Common colors
 $black: #000;
-$white: #fff;
+$white: rgb(255, 255, 255);
 $orange: #ffa500;
 $blue: #007fe3;
 $light-blue: #15b2ff;
 $gray: #464f58;
-$dark: #1a1a1a;  //for preloader
+
 
 // Site colors
 $accent: #F9C869;
 $over: #3D3D3D;
+$light-black: rgb(51, 51, 51);
+$dark-black: rgb(26, 26, 26);
+$dark: rgb(36, 36, 36);
 
 // Fonts
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -21,10 +24,10 @@ $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 
 // Body
 $base-text-color: $black !default;
-$base-background-color: $white !default;
-$font-size-base: 16px !default;
-$line-height-base: 1.6 !default;                          // 1.6 standart
-$base-font-family: 'RobotoRegular', $base-font-sans-serif !default;
+$base-background-color: $dark-black !default;
+$font-size-base: 14px !default;
+$line-height-base: 1.4 !default;                          // 1.6 standart
+$base-font-family: 'MyriadProRegular', $base-font-sans-serif !default;
 
 $vertical-rhythm: ($line-height-base * 1em);
 
@@ -39,6 +42,7 @@ $btn-background: $blue !default;
 $btn-padding: 0.4em 0.7em !default;
 $btn-border-radius: 28px;
 $btn-font-size: inherit !default;
+$btn-font-family: 'MyriadProRegular' !default;
 
 // Forms
 $form-element-padding: 8px 17px !default;

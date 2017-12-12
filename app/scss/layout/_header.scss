@@ -2,51 +2,144 @@
                            Header
    ---------------------------------------------------------*/
 
-.header-bg {
-  position: relative;
-  height: 340px;
+.header {
+  background: $light-black;
+}
 
-  @include media(">=768px") {
-    height: 600px;
+.logo {
+  position: relative;
+  z-index: 105;
+  display: block;
+  text-decoration: none;
+  color: $white;
+  font-family: Sarina;
+  font-size: 20px;
+
+  @include media("<tablet") {
+    width: 92%;
+    display: block;
+    text-align: center;
   }
 }
 
-//.header-bg {
-//  max-width: 100%;
-//  height: 600px;
-//
-//  @include media(">=992px") {
-//    background: #d2ed22 url("/img/img1-large.jpg") no-repeat top center;
-//    background-size: cover;
-//  }
-//
-//  @include media("<992px") {
-//    background: #d2ed22 url("/img/img1-small.jpg") no-repeat top center;
-//    background-size: cover;
-//  }
-//}
-
-
-#picture-bg {
-  width: 100%;
-  height: 100%;
+.open {
+  position: relative;
+  z-index: 105;
+  position: relative;
+  @include size(48px);
   display: block;
+  order: -1;
 
-}
-.img {
-  width: 100%;
+  &:focus,
+  &:hover {
+    outline: none;
+    opacity: .65;
+  }
+
+  @include media(">=tablet") {
+    display: none;
+  }
+
+  &__item {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: #fff;
+    position: relative;
+    top: 20px;
+    left: 16px;
+    z-index: 1;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+
+    &_last {
+      top: 26px;
+    }
+  }
+
+  &_active {
+    .open__item {
+      transform: rotate(135deg);
+
+    }
+    .open__item_last {
+      transform: rotate(45deg);
+      top: 19px;
+    }
+  }
 }
 
-/* retina plugin start */
-.bg-stretch {
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-bg {
   position: absolute;
+  z-index: 101;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  z-index: 0;
-}/* retina plugin end */
+  width: 100%;
+  height: 0;
+  transition: all .6s ease-in;
 
+  @include media("<tablet") {
+    height: 0;
+    background: $light-black;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+  }
+}
+
+.menu {
+  position: relative;
+  z-index: 105;
+  width: 80%;
+  @extend %listreset;
+  display: flex;
+  justify-content: space-around;
+  transform: translateX(0);
+
+  @include media("<tablet") {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    padding: 20px 48px;
+    width: 100%;
+    background: $light-black;
+    display: block;
+    z-index: 1000;
+    font-size: 17px;
+    transform: translateX(-100px) scaleY(0.5);
+    opacity: 0;
+    transform-origin: 50% 0;
+
+  }
+
+  &__link {
+    padding: 15px 10px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    @extend %transition;
+    font-family: 'MyriadProLight';
+
+    @include media("<tablet") {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &_last {
+      @include media("<tablet") {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      }
+    }
+    
+    &:hover,
+    &_active {
+      color: #e74a3d;
+    }
+  }
+}

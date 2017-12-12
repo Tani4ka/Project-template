@@ -41,6 +41,7 @@ $media-expressions: (
 @import 'vendors/include-media';
 @import 'vendors/normalize';
 
+
 /* ---------------------------------------------------------
 	1. Libs
    ---------------------------------------------------------*/
@@ -49,13 +50,14 @@ $media-expressions: (
 /* ---------------------------------------------------------
 	2. Сustom styles
    ---------------------------------------------------------*/
-@import 'base/variables';
+@import 'base/vars';
 @import 'base/mixins';
 @import 'base/font-face';
 @import 'base/helpers';
 @import 'base/forms';
 @import 'base/typography';
 @import 'base/buttons';
+@import 'base/flex-grid';
 
 /* ---------------------------------------------------------
     3. General reset
@@ -71,3 +73,5 @@ $media-expressions: (
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
+@import 'vendors/mg';
+//@import 'vendors/animate';
